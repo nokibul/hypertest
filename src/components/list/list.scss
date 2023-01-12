@@ -5,16 +5,50 @@
     box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
     padding: 20px 30px;
     box-sizing: border-box;
-    width: 80%;
-    margin: 0 10%;
+    width: 60%;
+    margin: 0 auto;
     position: relative;
     height: 90vh;
 }
 
+.page-title{
+    font-size: 2rem;
+    margin-bottom: 50px;
+    background-color: rgb(167, 167, 167);
+}
+
 .list-container{
-    background-color: grey;
+    // background-color: grey;
     height: 80%;
     width: 70%;
     margin: 0 auto;
     margin-top: 6%;
+}
+
+.list{
+    list-style: none;   
+    // position: relative;
+}
+
+.list-item{
+    margin-bottom: 5px;
+    cursor: pointer;
+    :hover{
+        transform: translateX(5px);
+    }
+    a{
+        border-radius: 8px;
+        background-color: #1D1E22;
+        color: white;
+        display: flex;
+        justify-content: space-between;
+        width: 90%;
+        margin: 0 auto;
+        text-decoration: none;
+        padding: 4px 20px;
+        h1,h3{
+            padding: 0;
+            margin: 0;
+        }
+    }
 }
