@@ -1,19 +1,44 @@
-import React from 'react'
+import {React, useState, useRef, useEffect} from 'react'
 import './create.scss'
+import { v4 as uuid } from 'uuid';
 
 
 
 const Create = () => {
+  const id = uuid().slice(0,4)
+  let number = useRef()
+  let name = useRef();
+  const [data, setData] = useState([]);
+  useEffect(() => {
+    localStorage.setItem(id, JSON.stringify(data));
+  }, [data]);
+
+  const clickHandler = (e) => {
+    e.preventDefault();
+    const info = [
+      {
+        fullname: name.current.value,
+        phone: number.current.value
+      }
+    ]
+    setData(info)
+    name.current.value = ""
+    number.current.value = ""
+    console.log(id)
+  };
+
   return (
     <>
         <form action="">
             <fieldset>
-                <h2 class="title">Create</h2>
+                <h1 className="page-title">Create</h1>
                 <div className="inputs">
-                    <input type="text" name="email" placeholder="Name" />
-                    <input type="tel" name="pass" placeholder="Phone" />
+                    <input type="text" name="name" placeholder="Name" ref={name} />
+                    <h5 className='error'>Error</h5>
+                    <input type="tel" name="number" placeholder="Phone" ref={number} />
+                    <h5 className='error'>Error</h5>
                 </div>
-                <button>Save</button>
+                <button onClick={clickHandler}>Save</button>
             </fieldset>
         </form>
     </>
