@@ -1,22 +1,15 @@
 import React from 'react'
+import { Link } from "react-router-dom";
 import './list.scss';
 
 const List = () => {
   let keys = []
   for (let i = 0; i < localStorage.length; i++) {
-    // if(localStorage.getItem(localStorage.key(i))!== undefined && localStorage.getItem(localStorage.key(i))!== null){
       keys.push(localStorage.key(i))
-      // let item = JSON.parse(localStorage.getItem(localStorage.key(i)))
-      // console.log(item)
-    // }
   }
-  // for(let i = 0;i < keys.length; i++){
-  //   console.log(keys[i])
-  // }
-  
-  keys.filter((key)=> localStorage.getItem(key)!=="undefined").map((key)=>{
-    console.log(localStorage.getItem(key))
-  })
+  for(let i = 0;i < keys.length; i++){
+    console.log(keys[i])
+  }
 
   return (
     <>
@@ -31,15 +24,15 @@ const List = () => {
               </a>
             </li>
             {
-              // .filter((key)=>localStorage.getItem(key)!=="undefined").
               keys.map((key) =>{
-                    return(
-                      <li key={key} className='list-item'>
-                        <a href=''>
-                          <h1>{JSON.parse(localStorage.getItem(key))[0].fullname}</h1>
-                          <h3>{JSON.parse(localStorage.getItem(key))[0].phone}</h3>
-                        </a>
-                      </li>)
+                    return (
+                      <li  className='list-item'>
+                        <Link to={`/contacts/${key}`}>
+                          <h1>{JSON.parse(localStorage.getItem(key)).fullname}</h1>
+                          <h3>{JSON.parse(localStorage.getItem(key)).phone}</h3>
+                        </Link>
+                      </li>
+                  )
                 }
               )
             }

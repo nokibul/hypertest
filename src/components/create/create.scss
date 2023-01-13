@@ -30,6 +30,7 @@ fieldset {
             margin-bottom: 5px;
             border-radius: 8px;
             height: $height;
+            width: 100%;
         }
         h5{
             padding: 0;
@@ -37,6 +38,15 @@ fieldset {
             margin-right: auto;
             margin-left: 10px;
             color: red;
+        }
+        .numberContainer{
+            display: flex;
+            flex-direction: row-reverse;
+            justify-content: space-between;
+        }
+        select{
+            border-radius: 10px;
+            
         }
     }
 
@@ -52,9 +62,13 @@ fieldset {
         color: #fff;
         background: #1D1E22;
         font-size: 16px;
+        margin-top: 10px;
     }
 }
 
 .error{
     visibility: visible;
+    position: relative;
+    bottom: 0;
+    left: 0;
 }
