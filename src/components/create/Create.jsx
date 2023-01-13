@@ -18,6 +18,7 @@ const Create = () => {
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [error, setError] = useState(false);
+  const [success, setSuccess] = useState(false);
   const [selectedCode, setSelectedCode] = useState(countryCodes[0].value);
 
 
@@ -37,6 +38,7 @@ const Create = () => {
   const clickHandler = (e) => {
     e.preventDefault();
     setError(false)
+    setSuccess(false)
     if(phone.length!==14 && phone.slice(0,3)!==880){
       setError(true)
       console.log("invalid")
@@ -48,12 +50,12 @@ const Create = () => {
         phone: phone
       }
     setData(info)
+    setSuccess(true)
   };
 
   const selectHandler = (e) => {
     e.preventDefault();
     setPhone(e.target.value);
-    console.log(phone)
     setSelectedCode(e.target.value);
   }
 
@@ -81,6 +83,7 @@ const Create = () => {
                       </select>
                     </div>
                     {error? <h5 className='error'>Please provide a valid "Bangladesh" phone number</h5> : null}
+                    {success? <h5 className='success'>Your contact has been added successfully</h5> : null}
                 </div>
                 <button onClick={clickHandler} >Save</button>
             </fieldset>
