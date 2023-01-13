@@ -4,11 +4,11 @@ $height: 40px;
 // }
 
 
-.title{
+.page-title{
     font-size: 2rem;
-    margin-bottom: 20px;
+    margin-bottom: 50px;
+    background-color: rgb(167, 167, 167);
 }
-
 
 fieldset {
     background: white;
@@ -22,19 +22,27 @@ fieldset {
     position: relative;
     .inputs{
         display: flex;
+        position: relative;
         width: 50%;
         flex-direction: column;
         margin: 0 auto;
         input{
-            margin-bottom: 20px;
+            margin-bottom: 5px;
+            border-radius: 8px;
             height: $height;
+        }
+        h5{
+            padding: 0;
+            margin: 0;
+            margin-right: auto;
+            margin-left: 10px;
+            color: red;
         }
     }
 
     button{
         height: $height;
         width: 100px;
-        // display: inline-block;
         outline: none;
         cursor: pointer;
         font-weight: 600;
@@ -42,8 +50,11 @@ fieldset {
         padding: 12px 24px;
         border: 0;
         color: #fff;
-        background: #DAA370;
+        background: #1D1E22;
         font-size: 16px;
     }
 }
 
+.error{
+    visibility: visible;
+}

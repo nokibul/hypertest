@@ -1,31 +1,68 @@
 import {React, useState, useRef, useEffect} from 'react'
-import './create.scss'
+import './create.scss';
 import { v4 as uuid } from 'uuid';
+
+
+const countryCodes = [
+  { label: 'United States', value: '+1' },
+  { label: 'Bangladesh', value: '+880' },
+  { label: 'United Kingdom', value: '+44' },
+  { label: 'Australia', value: '+61' },
+  // Add more country codes as needed
+];
 
 
 
 const Create = () => {
   const id = uuid().slice(0,4)
-  let number = useRef()
-  let name = useRef();
-  const [data, setData] = useState([]);
-  useEffect(() => {
-    localStorage.setItem(id, JSON.stringify(data));
-  }, [data]);
+  // let nameData = useRef();
+  // let phoneData = useRef();
+  // let errorfield = useRef();
+  const [data, setData] = useState();
 
+  const [name, setName] = useState("");
+  const [phone, setPhone] = useState("");
+  const [error, setError] = useState(false);
+  const [selectedCode, setSelectedCode] = useState(countryCodes[0].value);
+  // const isMounted = useRef(false);
+
+
+  // useEffect(() => {
+  //   if (isMounted.current && data!==undefined) {
+  //     localStorage.setItem(id, JSON.stringify(data));
+  //   } else {
+  //     isMounted.current = true;
+  //   }
+  // }, [data]);
+
+
+
+  //  the handler 
   const clickHandler = (e) => {
     e.preventDefault();
-    const info = [
+    // console.log(phone.length)
+    setError(false)
+    if(phone.length!==14 && phone.slice(0,3)!==880){
+      setError(true)
+      console.log("invalid")
+      return
+    }
+    const info = 
       {
-        fullname: name.current.value,
-        phone: number.current.value
+        fullname: name,
+        phone: phone
       }
-    ]
     setData(info)
-    name.current.value = ""
-    number.current.value = ""
-    console.log(id)
+    localStorage.setItem(id, JSON.stringify(info));
+    console.log(data)
   };
+
+  const selectHandler = (e) => {
+    e.preventDefault();
+    setPhone(e.target.value);
+    console.log(phone)
+    setSelectedCode(e.target.value);
+  }
 
   return (
     <>
@@ -33,16 +70,28 @@ const Create = () => {
             <fieldset>
                 <h1 className="page-title">Create</h1>
                 <div className="inputs">
-                    <input type="text" name="name" placeholder="Name" ref={name} />
-                    <h5 className='error'>Error</h5>
-                    <input type="tel" name="number" placeholder="Phone" ref={number} />
-                    <h5 className='error'>Error</h5>
+                    <label htmlFor="name">Name</label>
+                    <input type="text" name="name" placeholder="Name" onChange={(e)=> setName(e.target.value)} />
+                    <label htmlFor="phone">Phone</label>
+                    <input type="tel" name="number" placeholder="Phone" onChange={(e)=> setPhone(e.target.value)} value={phone} />
+                    <select
+                        id="country-code-selector"
+                        value={selectedCode}
+                        onChange={selectHandler}
+                      >
+                        {countryCodes.map(({ label, value }) => (
+                          <option key={value} value={value}>
+                            {label} ({value})
+                          </option>
+                        ))}
+                    </select>
+                    {error? <h5 className='error'>Please provide a valid phone number</h5> : null}
                 </div>
-                <button onClick={clickHandler}>Save</button>
+                <button onClick={clickHandler} >Save</button>
             </fieldset>
         </form>
     </>
   )
 }
 
-export default Create
+export default Create;
