@@ -11,18 +11,18 @@ const countryCodes = [
 ];
 
 
-
 const Create = () => {
   const id = uuid().slice(0,4)
-  const [data, setData] = useState();
 
+  const [data, setData] = useState();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
   const [error, setError] = useState(false);
   const [selectedCode, setSelectedCode] = useState(countryCodes[0].value);
-  const isMounted = useRef(false);
-  // +8801617054351
 
+
+  // useeffect wont run on first load 
+  const isMounted = useRef(false);
   useEffect(() => {
     if (isMounted.current && data!==undefined) {
       localStorage.setItem(id, JSON.stringify(data));
@@ -31,6 +31,7 @@ const Create = () => {
       isMounted.current = true;
     }
   }, [data]);
+
 
   //  the handler 
   const clickHandler = (e) => {

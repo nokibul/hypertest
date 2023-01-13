@@ -7,9 +7,6 @@ const List = () => {
   for (let i = 0; i < localStorage.length; i++) {
       keys.push(localStorage.key(i))
   }
-  for(let i = 0;i < keys.length; i++){
-    console.log(keys[i])
-  }
 
   return (
     <>
@@ -17,12 +14,6 @@ const List = () => {
         <h1 className='page-title'>Contacts</h1>
         <div className="list-container">
           <ul className='list'>
-            <li className='list-item'>
-              <a href=''>
-                <h1>Nokibul</h1>
-                <h3>01617054351</h3>
-              </a>
-            </li>
             {
               keys.map((key) =>{
                     return (
