@@ -20,6 +20,7 @@ fieldset {
     width: 80%;
     margin: 0 10%;
     position: relative;
+    
     .inputs{
         display: flex;
         position: relative;
@@ -46,11 +47,11 @@ fieldset {
         }
         select{
             border-radius: 10px;
-            
+            width: 100%;
         }
     }
 
-    button{
+    .saveButton{
         height: $height;
         width: 100px;
         outline: none;
@@ -79,4 +80,16 @@ fieldset {
     bottom: 0;
     left: 0;
     color: Green!important;
+}
+
+.showContacts{
+    height: 50px;
+    width: 15%;
+    margin-bottom: 40px;
+    background: #1D1E22;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
 }

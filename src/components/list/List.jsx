@@ -12,6 +12,9 @@ const List = () => {
     <>
       <div className="container">
         <h1 className='page-title'>Contacts</h1>
+        <Link to="/">
+          <button className='homeButton'>CREATE</button>
+        </Link>
         <div className="list-container">
           <ul className='list'>
             {

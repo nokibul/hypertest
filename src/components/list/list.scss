@@ -14,7 +14,7 @@
 
 .page-title{
     font-size: 2rem;
-    margin-bottom: 50px;
+    margin-bottom: 10px;
     background-color: rgb(167, 167, 167);
 }
 
@@ -52,4 +52,15 @@
             margin: 0;
         }
     }
+}
+
+.homeButton{
+    height: 50px;
+    width: 15%;
+    background: #1D1E22;
+    color: white;
+    font-weight: bold;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
 }

@@ -1,6 +1,7 @@
 import {React, useState, useRef, useEffect} from 'react'
 import './create.scss';
 import { v4 as uuid } from 'uuid';
+import { Link } from 'react-router-dom';
 
 
 const countryCodes = [
@@ -64,6 +65,9 @@ const Create = () => {
         <form action="">
             <fieldset>
                 <h1 className="page-title">Create</h1>
+                <Link to="/contacts">
+                  <button className='showContacts'>CONTACT</button>
+                </Link>
                 <div className="inputs">
                     <label htmlFor="name">Name</label>
                     <input type="text" name="name" placeholder="Name" onChange={(e)=> setName(e.target.value)} />
@@ -85,7 +89,7 @@ const Create = () => {
                     {error? <h5 className='error'>Please provide a valid "Bangladesh" phone number</h5> : null}
                     {success? <h5 className='success'>Your contact has been added successfully</h5> : null}
                 </div>
-                <button onClick={clickHandler} >Save</button>
+                <button className='saveButton' onClick={clickHandler} >Save</button>
             </fieldset>
         </form>
     </>
