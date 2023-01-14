@@ -10,7 +10,8 @@ fieldset {
     .inputs{
         display: flex;
         position: relative;
-        width: 50%;
+        width: 30%;
+        min-width: 130px;
         flex-direction: column;
         margin: 0 auto;
         input{
