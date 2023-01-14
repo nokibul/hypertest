@@ -1,57 +1,49 @@
-.container{
-    background: white;
-    border: 0 none;
-    border-radius: 3px;
-    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-    padding: 20px 30px;
-    box-sizing: border-box;
-    width: 60%;
-    margin: 0 auto;
-    position: relative;
-    // height: 50vh;
-    height: 100%;
-}
+@use '../../assets/globalstyles';
 
 .page-title{
     font-size: 2rem;
     margin-bottom: 10px;
-    background-color: rgb(167, 167, 167);
+    color: black;
 }
 
 .list-container{
-    // background-color: grey;
+    background-color: #1D1E22;
     height: 80%;
-    width: 70%;
+    width: 60%;
     margin: 0 auto;
     margin-top: 6%;
 }
 
 .list{
-    list-style: none;   
-    // position: relative;
+    list-style: none;
+    // background-color: black;
+    padding: 0;
 }
 
 .list-item{
     margin-bottom: 5px;
     cursor: pointer;
     :hover{
-        transform: translateX(5px);
+        // transform: translateX(5px);
+        background-color: grey;
     }
     a{
-        border-radius: 8px;
-        background-color: #1D1E22;
+        border-radius: 4px;
+        // background-color: #1D1E22;
         color: white;
         display: flex;
         justify-content: space-between;
-        width: 90%;
-        margin: 0 auto;
+        width: 100%;
+        // margin: 0 auto;
         text-decoration: none;
-        padding: 4px 20px;
-        h1,h3{
+        padding: 10px 0px;
+        h2,h3{
             padding: 0;
             margin: 0;
+            width: 50%;
         }
     }
+    
 }
 
 .homeButton{
@@ -63,4 +55,17 @@
     border-radius: 8px;
     border: none;
     cursor: pointer;
+}
+
+.list-topbar{
+    // background-color: red;
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin: 0 auto;
+    padding-top: 15px;
+    span{
+        width: 50%;
+        text-align: center;
+    }
 }

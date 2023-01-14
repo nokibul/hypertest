@@ -62,6 +62,7 @@ const Create = () => {
 
   return (
     <>
+    <div className="container">
         <form action="">
             <fieldset>
                 <h1 className="page-title">Create</h1>
@@ -72,8 +73,8 @@ const Create = () => {
                     <label htmlFor="name">Name</label>
                     <input type="text" name="name" placeholder="Name" onChange={(e)=> setName(e.target.value)} />
                     <label htmlFor="phone">Phone</label>
-                    <div className="numberContainer">
                       <input type="tel" name="number" placeholder="Phone" onChange={(e)=> setPhone(e.target.value)} value={phone} />
+                    {/* <div className="numberContainer">
                       <select
                           id="country-code-selector"
                           value={selectedCode}
@@ -85,13 +86,14 @@ const Create = () => {
                             </option>
                           ))}
                       </select>
-                    </div>
+                    </div> */}
                     {error? <h5 className='error'>Please provide a valid "Bangladesh" phone number</h5> : null}
                     {success? <h5 className='success'>Your contact has been added successfully</h5> : null}
                 </div>
                 <button className='saveButton' onClick={clickHandler} >Save</button>
             </fieldset>
         </form>
+    </div>
     </>
   )
 }

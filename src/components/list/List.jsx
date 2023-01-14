@@ -16,13 +16,22 @@ const List = () => {
           <button className='homeButton'>CREATE</button>
         </Link>
         <div className="list-container">
+          <div className="list-topbar">
+            <span className="list-topbar-title">
+              <h2>Name</h2>
+            </span>
+            <span className="list-topbar-title">
+              <h2>Phone</h2>
+            </span>
+          </div>
+          <hr />
           <ul className='list'>
             {
               keys.map((key) =>{
                     return (
                       <li  className='list-item'>
                         <Link to={`/contacts/${key}`}>
-                          <h1>{JSON.parse(localStorage.getItem(key)).fullname}</h1>
+                          <h2>{JSON.parse(localStorage.getItem(key)).fullname}</h2>
                           <h3>{JSON.parse(localStorage.getItem(key)).phone}</h3>
                         </Link>
                       </li>

@@ -1,7 +1,6 @@
+@use '../../assets/globalstyles';
+
 $height: 40px;
-// ::placeholder{
-//     padding-left: 10px;
-// }
 
 
 .page-title{
@@ -11,15 +10,7 @@ $height: 40px;
 }
 
 fieldset {
-    background: white;
-    border: 0 none;
-    border-radius: 3px;
-    box-shadow: 0 0 15px 1px rgba(0, 0, 0, 0.4);
-    padding: 20px 30px;
-    box-sizing: border-box;
-    width: 80%;
-    margin: 0 10%;
-    position: relative;
+    border: none;
     
     .inputs{
         display: flex;
@@ -28,10 +19,19 @@ fieldset {
         flex-direction: column;
         margin: 0 auto;
         input{
-            margin-bottom: 5px;
-            border-radius: 8px;
-            height: $height;
-            width: 100%;
+            color: rgb(36, 35, 42);
+            font-size: 16px;
+            line-height: 20px;
+            min-height: 28px;
+            border-radius: 4px;
+            padding: 8px 16px;
+            border: 2px solid transparent;
+            box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
+            background: rgb(251, 251, 251);
+            transition: all 0.1s ease 0s;
+            :focus{
+                border: 2px solid rgb(124, 138, 255);
+            }
         }
         h5{
             padding: 0;
@@ -43,11 +43,11 @@ fieldset {
         .numberContainer{
             display: flex;
             flex-direction: row-reverse;
-            justify-content: space-between;
+            // justify-content: space-between;
         }
         select{
             border-radius: 10px;
-            width: 100%;
+            // width: 100%;
         }
     }
 
