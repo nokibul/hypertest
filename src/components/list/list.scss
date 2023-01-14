@@ -16,25 +16,21 @@
 
 .list{
     list-style: none;
-    // background-color: black;
     padding: 0;
+    margin: 0;
 }
 
 .list-item{
-    margin-bottom: 5px;
     cursor: pointer;
     :hover{
-        // transform: translateX(5px);
-        background-color: grey;
+        background: #393e46; 
     }
     a{
         border-radius: 4px;
-        // background-color: #1D1E22;
         color: white;
         display: flex;
         justify-content: space-between;
         width: 100%;
-        // margin: 0 auto;
         text-decoration: none;
         padding: 10px 0px;
         h2,h3{
@@ -43,12 +39,12 @@
             width: 50%;
         }
     }
-    
 }
 
 .homeButton{
     height: 50px;
     width: 15%;
+    min-width: 100px;
     background: #1D1E22;
     color: white;
     font-weight: bold;
@@ -58,14 +54,15 @@
 }
 
 .list-topbar{
-    // background-color: red;
     display: flex;
     justify-content: space-between;
     width: 100%;
     margin: 0 auto;
-    padding-top: 15px;
+    padding:15px 0;
     span{
         width: 50%;
         text-align: center;
     }
 }
+
+

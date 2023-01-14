@@ -1,17 +1,12 @@
 @use '../../assets/globalstyles';
-
 $height: 40px;
 
-
-.page-title{
-    font-size: 2rem;
-    margin-bottom: 50px;
-    background-color: rgb(167, 167, 167);
+form{
+    margin: 0 auto;
 }
 
 fieldset {
     border: none;
-    
     .inputs{
         display: flex;
         position: relative;
@@ -25,12 +20,16 @@ fieldset {
             min-height: 28px;
             border-radius: 4px;
             padding: 8px 16px;
+            margin: 10px 0;
             border: 2px solid transparent;
             box-shadow: rgb(0 0 0 / 12%) 0px 1px 3px, rgb(0 0 0 / 24%) 0px 1px 2px;
             background: rgb(251, 251, 251);
             transition: all 0.1s ease 0s;
             :focus{
                 border: 2px solid rgb(124, 138, 255);
+            }
+            ::placeholder{
+                font-weight: 500;
             }
         }
         h5{
@@ -84,6 +83,7 @@ fieldset {
 
 .showContacts{
     height: 50px;
+    min-width: 100px;
     width: 15%;
     margin-bottom: 40px;
     background: #1D1E22;

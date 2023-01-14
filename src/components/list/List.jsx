@@ -34,6 +34,7 @@ const List = () => {
                           <h2>{JSON.parse(localStorage.getItem(key)).fullname}</h2>
                           <h3>{JSON.parse(localStorage.getItem(key)).phone}</h3>
                         </Link>
+                        <hr />
                       </li>
                   )
                 }

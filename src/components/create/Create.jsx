@@ -54,11 +54,6 @@ const Create = () => {
     setSuccess(true)
   };
 
-  const selectHandler = (e) => {
-    e.preventDefault();
-    setPhone(e.target.value);
-    setSelectedCode(e.target.value);
-  }
 
   return (
     <>
@@ -67,12 +62,12 @@ const Create = () => {
             <fieldset>
                 <h1 className="page-title">Create</h1>
                 <Link to="/contacts">
-                  <button className='showContacts'>CONTACT</button>
+                  <button className='showContacts'><h3>CONTACTS</h3></button>
                 </Link>
                 <div className="inputs">
-                    <label htmlFor="name">Name</label>
+                    {/* <label htmlFor="name">Name</label> */}
                     <input type="text" name="name" placeholder="Name" onChange={(e)=> setName(e.target.value)} />
-                    <label htmlFor="phone">Phone</label>
+                    {/* <label htmlFor="phone">Phone</label> */}
                       <input type="tel" name="number" placeholder="Phone" onChange={(e)=> setPhone(e.target.value)} value={phone} />
                     {/* <div className="numberContainer">
                       <select
