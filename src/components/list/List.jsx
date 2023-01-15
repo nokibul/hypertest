@@ -1,8 +1,17 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { Link } from "react-router-dom";
 import './list.scss';
 
 const List = () => {
+  const [edit, setEdit] = useState(false);
+  const [name, setName] = useState("");
+
+  // const deleteItem = (e) =>{
+  //   e.preventDefault()
+  //   console.log(e.target.value);
+  // }
+
+
   let keys = []
   for (let i = 0; i < localStorage.length; i++) {
       keys.push(localStorage.key(i))
@@ -29,13 +38,23 @@ const List = () => {
             {
               keys.map((key) =>{
                     return (
-                      <li  className='list-item'>
-                        <Link to={`/contacts/${key}`}>
-                          <h2>{JSON.parse(localStorage.getItem(key)).fullname}</h2>
-                          <h3>{JSON.parse(localStorage.getItem(key)).phone}</h3>
-                        </Link>
-                        <hr />
+                      <li key={key} className='list-item'>
+                        <div className="item">
+                          <Link to={`/contacts/${key}`}>
+                            {edit? <input type="text" value={"dd"} />: <h2>{JSON.parse(localStorage.getItem(key)).fullname}</h2>}
+                            <h3>{JSON.parse(localStorage.getItem(key)).phone}</h3>
+                            {/* <hr /> */}
+                          </Link>
+                          <div className="operations">
+                            <button value={JSON.parse(localStorage.getItem(key)).fullname} onClick={()=>{
+                              localStorage.removeItem(key) 
+                              window.location.reload(false)
+                            }} className='delete'>Delete</button>
+                            <button onClick={()=>{setEdit(true)}} className='edit'>Edit</button>
+                          </div>
+                        </div>
                       </li>
+                      
                   )
                 }
               )

@@ -10,6 +10,7 @@
     background-color: #1D1E22;
     height: 80%;
     width: 70%;
+    min-width: 300px;
     margin: 0 auto;
     margin-top: 6%;
 }
@@ -18,12 +19,19 @@
     list-style: none;
     padding: 0;
     margin: 0;
+    // width: 90%;
 }
 
 .list-item{
+    position: relative;
     cursor: pointer;
-    :hover{
-        background: #393e46; 
+    // .item{
+    //     :hover{
+    //         background: #393e46; 
+    //     }
+    // }
+    .item{
+        display: flex;
     }
     a{
         border-radius: 4px;
@@ -37,8 +45,17 @@
             padding: 0;
             margin: 0;
             width: 50%;
+            text-align: left;
+            margin-left: 10%;
         }
     }
+}
+
+.operations{
+    // position: absolute;
+    // right: -10%;
+    // top: 0;
+    display: flex;
 }
 
 .homeButton{
@@ -56,8 +73,9 @@
 .list-topbar{
     display: flex;
     justify-content: space-between;
-    width: 100%;
-    margin: 0 auto;
+    width: 80%;
+    // margin: 0 auto;
+    margin-right: auto;
     padding:15px 0;
     span{
         width: 50%;
@@ -65,4 +83,17 @@
     }
 }
 
-
+.operations{
+    // margin-top: -2.5rem;
+    // margin-left: auto;
+    button{
+        margin-right: 5px;
+        height: 2rem;
+        max-width: 50px;
+        color: black;
+        font-weight: bold;
+        border-radius: 8px;
+        border: none;
+        cursor: pointer;
+    }
+}

@@ -69,19 +69,6 @@ const Create = () => {
                     <input type="text" name="name" placeholder="Name" onChange={(e)=> setName(e.target.value)} />
                     {/* <label htmlFor="phone">Phone</label> */}
                       <input type="tel" name="number" placeholder="Phone" onChange={(e)=> setPhone(e.target.value)} value={phone} />
-                    {/* <div className="numberContainer">
-                      <select
-                          id="country-code-selector"
-                          value={selectedCode}
-                          onChange={selectHandler}
-                        >
-                          {countryCodes.map(({ label, value }) => (
-                            <option key={value} value={value}>
-                              {label} ({value})
-                            </option>
-                          ))}
-                      </select>
-                    </div> */}
                     {error? <h5 className='error'>Please provide a valid "Bangladesh" phone number</h5> : null}
                     {success? <h5 className='success'>Your contact has been added successfully</h5> : null}
                 </div>
