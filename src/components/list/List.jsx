@@ -3,8 +3,6 @@ import { Link } from "react-router-dom";
 import './list.scss';
 
 const List = () => {
-  const [edit, setEdit] = useState(false);
-  const [name, setName] = useState("");
 
   // const deleteItem = (e) =>{
   //   e.preventDefault()
@@ -41,7 +39,7 @@ const List = () => {
                       <li key={key} className='list-item'>
                         <div className="item">
                           <Link to={`/contacts/${key}`}>
-                            {edit? <input type="text" value={"dd"} />: <h2>{JSON.parse(localStorage.getItem(key)).fullname}</h2>}
+                            <h2>{JSON.parse(localStorage.getItem(key)).fullname}</h2>
                             <h3>{JSON.parse(localStorage.getItem(key)).phone}</h3>
                             {/* <hr /> */}
                           </Link>
@@ -50,7 +48,6 @@ const List = () => {
                               localStorage.removeItem(key) 
                               window.location.reload(false)
                             }} className='delete'>Delete</button>
-                            <button onClick={()=>{setEdit(true)}} className='edit'>Edit</button>
                           </div>
                         </div>
                       </li>

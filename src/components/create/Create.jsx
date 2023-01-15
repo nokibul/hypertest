@@ -20,7 +20,6 @@ const Create = () => {
   const [phone, setPhone] = useState("");
   const [error, setError] = useState(false);
   const [success, setSuccess] = useState(false);
-  const [selectedCode, setSelectedCode] = useState(countryCodes[0].value);
 
 
   // useeffect wont run on first load 
