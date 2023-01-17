@@ -14,7 +14,6 @@ const countryCodes = [
 
 const Create = () => {
   const id = uuid().slice(0,4)
-
   const [data, setData] = useState();
   const [name, setName] = useState("");
   const [phone, setPhone] = useState("");
