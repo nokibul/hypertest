@@ -46,7 +46,7 @@ const List = () => {
                           <div className="operations">
                             <button value={JSON.parse(localStorage.getItem(key)).fullname} onClick={()=>{
                               localStorage.removeItem(key) 
-                              window.location.reload(false)
+                              window.location.replace("/contacts")
                             }} className='delete'>Delete</button>
                           </div>
                         </div>
